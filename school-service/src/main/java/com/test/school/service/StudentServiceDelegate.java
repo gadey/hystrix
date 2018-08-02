@@ -6,8 +6,6 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -76,36 +74,6 @@ public class StudentServiceDelegate {
 	                    " Prodcut Details " + title + " -  " + new Date();
 	    }
 	    
-	   /* public String callProdcutData(String productId) throws Exception  {
-	    	 RestTemplate restTemplate = new RestTemplate();
-	         Product product = new Product();
-
-	         String url = "https://redsky.target.com/v1/pdp/tcin/"+ productId +"?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics";
-	         Map<String, String> urlVariables = new HashMap<String, String>();
-	         urlVariables.put("id", productId);
-
-	         ObjectMapper infoMapper = new ObjectMapper();
-	         Map<String, Map> infoMap;
-
-
-	             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class, urlVariables);
-	             infoMap = infoMapper.readValue(response.getBody(), Map.class);
-
-	             //product.productId = productId;
-	             Map<String,Map> productMap = infoMap.get("product");
-	             Map<String,Map> itemMap = productMap.get("item");
-	             Map<String,String> prodDescrMap = itemMap.get(("product_description"));
-	             String title = prodDescrMap.get("title");
-
-
-	        
-
-
-	         return title;
-
-	    }*/
-	    
-	     
 	    @SuppressWarnings("unused")
 	    private String callStudentServiceAndGetData_Fallback(String schoolname) {
 	 

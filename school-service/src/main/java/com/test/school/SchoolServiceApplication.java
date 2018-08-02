@@ -17,8 +17,6 @@ import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServl
 @EnableEurekaClient
 @EnableFeignClients
 public class SchoolServiceApplication {
-
-	//
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SchoolServiceApplication.class, args);
@@ -32,7 +30,7 @@ public class SchoolServiceApplication {
 	
 	@Bean
 	public ServletRegistrationBean servletRegistration() {
-	  ServletRegistrationBean registration = new ServletRegistrationBean(new     HystrixMetricsStreamServlet(), "/hystrix.stream"); 
+	  ServletRegistrationBean registration = new ServletRegistrationBean(new HystrixMetricsStreamServlet(), "/hystrix.stream"); 
 	  return registration;
 	}
 }

@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,21 +21,22 @@ public class StudentServiceController {
         schooDB = new HashMap<String, List<Student>>();
  
         List<Student> lst = new ArrayList<Student>();
-        Student std = new Student("Sajal", "Class IV");
-        lst.add(std);
-        std = new Student("Lokesh", "Class V");
-        lst.add(std);
+        lst.add(new Student("abc", "Grade A"));
+        lst.add(new Student("cde", "Grade B"));
  
         schooDB.put("abcschool", lst);
  
-        lst = new ArrayList<Student>();
-        std = new Student("Kajal", "Class III");
-        lst.add(std);
-        std = new Student("Sukesh", "Class VI");
-        lst.add(std);
+        List<Student> lst1 = new ArrayList<Student>();
+        lst1.add(new Student("xyz", "Grade 5"));
+        lst1.add(new Student("def", "Grade 6"));
  
-        schooDB.put("xyzschool", lst);
+        schooDB.put("xyzschool", lst1);
+        
+        List<Student> lst2 = new ArrayList<Student>();
+        lst2.add(new Student("kjl", "Grade 10"));
+        lst2.add(new Student("acd", "Grade 9"));
  
+        schooDB.put("123school", lst2);
     }
  
     @RequestMapping(value = "/getStudentDetailsForSchool/{schoolname}", method = RequestMethod.GET)

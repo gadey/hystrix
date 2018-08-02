@@ -29,8 +29,7 @@ public class SchoolServiceApplication {
     }
 	
 	@Bean
-	public ServletRegistrationBean servletRegistration() {
-	  ServletRegistrationBean registration = new ServletRegistrationBean(new HystrixMetricsStreamServlet(), "/hystrix.stream"); 
-	  return registration;
+	public ServletRegistrationBean<HystrixMetricsStreamServlet> servletRegistration() {
+	  return new ServletRegistrationBean<HystrixMetricsStreamServlet>(new HystrixMetricsStreamServlet(), "/hystrix.stream");
 	}
 }

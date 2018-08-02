@@ -50,7 +50,8 @@ public class StudentServiceDelegate {
 	    
 	    
 	    
-	    public String callProdcutData(String productId) throws Exception {
+	    @SuppressWarnings({ "unchecked", "rawtypes" })
+		public String callProdcutData(String productId) throws Exception {
 	   	 
 	    	System.out.println("Getting Prodcut Details for " + productId);
 	    	
